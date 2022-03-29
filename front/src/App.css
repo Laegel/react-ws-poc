@@ -1,0 +1,135 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --bg: #f8f8f8;
+  --grey: #999;
+  --dark: #1a1a1a;
+  --light: #e6e6e6;
+  --wrapper: 1000px;
+  --blue: #00b0ff;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Chat */
+
+.userList {
+  font-size: .5em;
+}
+
+.userList img {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.structure {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.structure .container-chat {
+  flex: 1;
+}
+
+.structure .container-users {
+  width: 200px;
+}
+
+.chat {
+  position: relative;
+  display: none;
+  overflow: hidden;
+  padding: 0 35px 92px;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.chat.active-chat {
+  display: block;
+  display: flex;
+}
+
+.bubble {
+  transition-timing-function: cubic-bezier(0.4, -0.04, 1, 1);
+}
+
+.bubble {
+  font-size: 16px;
+  position: relative;
+  display: inline-block;
+  clear: both;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  vertical-align: top;
+  border-radius: 5px;
+  display: flex;
+}
+
+.bubble .messageContent {
+  margin-left: 5px;
+}
+
+.bubble .messageContent p {
+  font-size: .9em;
+  margin: 6px 3px;
+}
+
+.bubble img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.bubble .userName {
+  vertical-align: top;
+}
+
+.bubble.you {
+  float: left;
+  color: var(--white);
+  background-color: var(--blue);
+  align-self: flex-start;
+  animation-name: slideFromLeft;
+}
+
+.bubble.me {
+  float: right;
+  color: var(--dark);
+  background-color: #eceff1;
+  align-self: flex-end;
+  animation-name: slideFromRight;
+}
